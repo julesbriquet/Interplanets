@@ -1,0 +1,135 @@
+fileFormatVersion: 2
+guid: cc9552cac7d197d41b7208d7a7338d42
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: 01_SCACESHIP_DESIGN_V05_VERT_0
+    21300002: 01_SCACESHIP_DESIGN_V05_VERT_1
+    21300004: 01_SCACESHIP_DESIGN_V05_VERT_2
+    21300006: 01_SCACESHIP_DESIGN_V05_VERT_3
+    21300008: 01_SCACESHIP_DESIGN_V05_VERT_4
+    21300010: 01_SCACESHIP_DESIGN_V05_VERT_5
+    21300012: 01_SCACESHIP_DESIGN_V05_VERT_6
+    21300014: 01_SCACESHIP_DESIGN_V05_VERT_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: 01_SCACESHIP_DESIGN_V05_VERT_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 560
+        width: 565
+        height: 464
+      alignment: 9
+      pivot: {x: .797317863, y: .779893279}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 01_SCACESHIP_DESIGN_V05_VERT_1
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 580
+        width: 436
+        height: 444
+      alignment: 9
+      pivot: {x: .749302447, y: .121656403}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 01_SCACESHIP_DESIGN_V05_VERT_2
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 240
+        width: 469
+        height: 297
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 01_SCACESHIP_DESIGN_V05_VERT_3
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 218
+        width: 383
+        height: 308
+      alignment: 9
+      pivot: {x: .901744723, y: .151674449}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 01_SCACESHIP_DESIGN_V05_VERT_4
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 36
+        width: 188
+        height: 189
+      alignment: 9
+      pivot: {x: .522526205, y: .126551718}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 01_SCACESHIP_DESIGN_V05_VERT_5
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 86
+        width: 102
+        height: 84
+      alignment: 9
+      pivot: {x: .790630877, y: .533610761}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 01_SCACESHIP_DESIGN_V05_VERT_6
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 63
+        width: 113
+        height: 85
+      alignment: 9
+      pivot: {x: .749846578, y: .500000298}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 01_SCACESHIP_DESIGN_V05_VERT_7
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 27
+        width: 315
+        height: 148
+      alignment: 9
+      pivot: {x: .423686862, y: .63535285}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
