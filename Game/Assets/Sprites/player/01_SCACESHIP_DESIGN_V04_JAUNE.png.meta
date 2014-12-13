@@ -1,0 +1,135 @@
+fileFormatVersion: 2
+guid: 44b94b9d0097c5d4ba04b1597a7509cb
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: 01_SCACESHIP_DESIGN_V04_JAUNE_0
+    21300002: 01_SCACESHIP_DESIGN_V04_JAUNE_1
+    21300004: 01_SCACESHIP_DESIGN_V04_JAUNE_2
+    21300006: 01_SCACESHIP_DESIGN_V04_JAUNE_3
+    21300008: 01_SCACESHIP_DESIGN_V04_JAUNE_4
+    21300010: 01_SCACESHIP_DESIGN_V04_JAUNE_5
+    21300012: 01_SCACESHIP_DESIGN_V04_JAUNE_6
+    21300014: 01_SCACESHIP_DESIGN_V04_JAUNE_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: 01_SCACESHIP_DESIGN_V04_JAUNE_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 560
+        width: 570
+        height: 459
+      alignment: 9
+      pivot: {x: .789936543, y: .779732883}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 01_SCACESHIP_DESIGN_V04_JAUNE_1
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 580
+        width: 429
+        height: 444
+      alignment: 9
+      pivot: {x: .769661307, y: .127784386}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 01_SCACESHIP_DESIGN_V04_JAUNE_2
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 234
+        width: 459
+        height: 303
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 01_SCACESHIP_DESIGN_V04_JAUNE_3
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 225
+        width: 372
+        height: 298
+      alignment: 9
+      pivot: {x: .896414459, y: .12032856}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 01_SCACESHIP_DESIGN_V04_JAUNE_4
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 32
+        width: 180
+        height: 191
+      alignment: 9
+      pivot: {x: .570625544, y: .107307293}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 01_SCACESHIP_DESIGN_V04_JAUNE_5
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 92
+        width: 94
+        height: 81
+      alignment: 5
+      pivot: {x: 1, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 01_SCACESHIP_DESIGN_V04_JAUNE_6
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 61
+        width: 105
+        height: 89
+      alignment: 9
+      pivot: {x: .76635915, y: .485716671}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 01_SCACESHIP_DESIGN_V04_JAUNE_7
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 24
+        width: 317
+        height: 149
+      alignment: 9
+      pivot: {x: .399742931, y: .696235061}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameObjectSpawner : CachedBase {
@@ -15,6 +16,9 @@ public class GameObjectSpawner : CachedBase {
     public Vector2 spawnPositionRange;
 
 
+    private Transform parentSpawner;
+    private List<GameObject> prevInstanciedObj;
+
     // This put transform and rigidbody in cache
     public override void Awake()
     {
@@ -24,35 +28,63 @@ public class GameObjectSpawner : CachedBase {
 
 	// Use this for initialization
 	void Start () {
-        StartCoroutine(SpawnWave());
+        InvokeRepeating("SpawnWave", startWait, spawnWait);
+        parentSpawner = GameObject.FindGameObjectWithTag("MiddleGround").GetComponent<Transform>();
+
+        prevInstanciedObj = new List<GameObject>();
 	}
 	
-	// Update is called once per
 
 
-    IEnumerator SpawnWave()
+    void SpawnWave()
     {
-        yield return new WaitForSeconds(startWait);
         Vector3 initialPosition = this.transform.position;
         //int randomVar = Random.Range(
 
-        for (int i = 0; i < collectibleCount; i++)
-        {
-            Vector3 spawnPosition = this.transform.position + new Vector3(Random.Range(-spawnPositionRange.x, spawnPositionRange.x), Random.Range(-spawnPositionRange.y, spawnPositionRange.y), 0);
-            Quaternion spawnRotation = Quaternion.identity;
-            GameObject spawnedObj = (GameObject)Instantiate(getRandomCollectible(), spawnPosition, spawnRotation);
-            spawnedObj.transform.parent = this.transform.parent;
-            yield return new WaitForSeconds(spawnWait);
-        }
-
+        // Spawn asteroids
         for (int i = 0; i < asteroidCount; i++)
         {
             Vector3 spawnPosition = this.transform.position + new Vector3(Random.Range(-spawnPositionRange.x, spawnPositionRange.x), Random.Range(-spawnPositionRange.y, spawnPositionRange.y), 0);
             Quaternion spawnRotation = Quaternion.identity;
             GameObject spawnedObj = (GameObject)Instantiate(getRandomAsteroids(), spawnPosition, spawnRotation);
-            spawnedObj.transform.parent = this.transform.parent;
-            yield return new WaitForSeconds(spawnWait);
+            spawnedObj.transform.parent = parentSpawner;
+
+            prevInstanciedObj.Add(spawnedObj);
         }
+
+
+        // Spawn Collectibles
+        for (int i = 0; i < collectibleCount; i++)
+        {
+            bool badPositionInstantiation = false; 
+
+            Vector3 spawnPosition = this.transform.position + new Vector3(Random.Range(0, spawnPositionRange.x), Random.Range(-spawnPositionRange.y, spawnPositionRange.y), 0);
+            Quaternion spawnRotation = Quaternion.identity;
+
+            
+            GameObject spawnedObj = (GameObject)Instantiate(getRandomCollectible(), spawnPosition, spawnRotation);
+
+            foreach (GameObject obj in prevInstanciedObj)
+            {
+                if (obj.collider2D.bounds.Intersects(spawnedObj.collider2D.bounds)) {
+                    badPositionInstantiation = true;
+                }
+            }
+
+            if (badPositionInstantiation) {
+                Destroy(spawnedObj);
+                i--;
+            }
+            else {
+                spawnedObj.transform.parent = parentSpawner;
+
+                prevInstanciedObj.Add(spawnedObj);
+            }
+        }
+
+        
+
+        prevInstanciedObj.Clear();
     }
 
 
@@ -60,7 +92,7 @@ public class GameObjectSpawner : CachedBase {
     {
         float[] cumulativeWeights = new float[collectibleObjects.Length];
         cumulativeWeights[0] = collectibleWeights[0];
-        for (int i = 1; i < 2; ++i)
+        for (int i = 1; i < collectibleWeights.Length; ++i)
         {
             cumulativeWeights[i] = cumulativeWeights[i - 1] + collectibleWeights[i];
         }
@@ -78,7 +110,7 @@ public class GameObjectSpawner : CachedBase {
     {
         float[] cumulativeWeights = new float[asteroidObjects.Length];
         cumulativeWeights[0] = asteroidsWeights[0];
-        for (int i = 1; i < 2; ++i)
+        for (int i = 1; i < asteroidsWeights.Length; ++i)
         {
             cumulativeWeights[i] = cumulativeWeights[i - 1] + asteroidsWeights[i];
         }
