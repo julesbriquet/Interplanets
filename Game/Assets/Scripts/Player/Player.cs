@@ -4,9 +4,9 @@ using System.Collections;
 public class Player : MonoBehaviour {
 
  
-
+    // HANDLING PLAYER CONTROL
     private PlayerController playerControl;
-
+    public GameObject[] ActiveControlGameObj;
 
     // ENERGY LEVEL HANDLING
     public float energyLevel;
@@ -33,7 +33,12 @@ public class Player : MonoBehaviour {
 
     public void LevelUpControl()
     {
+        if (playerControl.controlLevel - 1 < ActiveControlGameObj.Length)
+            ActiveControlGameObj[playerControl.controlLevel - 1].SetActive(true);
+
+
         playerControl.controlLevel++;
+
 
         if (playerControl.controlLevel == 2)
         {
