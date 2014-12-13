@@ -1,0 +1,10 @@
+Game/Library
+Game/Temp
+*.userprefs
+*.suo
+*.sln
+*.csproj
+*.db
+*.db.meta
+Game/Web
+Game/obj
