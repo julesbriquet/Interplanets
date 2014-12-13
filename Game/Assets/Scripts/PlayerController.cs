@@ -1,11 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : CachedBase {
 
     int playerNumber = 1;
     public Vector2 speed;
     public Vector2 velocity;
+
+
+    // This put transform and rigidbody in cache
+    public override void Awake()
+    {
+        base.Awake(); //does the caching.
+        //Debug.Log ("Awake called!");
+    }
 
 	// Use this for initialization
 	void Start () {
