@@ -3,13 +3,13 @@ guid: 89ab59ecbd08f8345a45a0a80ccf2cf0
 TextureImporter:
   fileIDToRecycleName:
     21300000: PLAYER_STUN_0
-    21300002: PLAYER_STUN_6
-    21300004: PLAYER_STUN_7
-    21300006: PLAYER_STUN_9
-    21300008: PLAYER_STUN_11
-    21300010: PLAYER_STUN_12
-    21300012: PLAYER_STUN_33
-    21300014: PLAYER_STUN_34
+    21300002: PLAYER_STUN_1
+    21300004: PLAYER_STUN_2
+    21300006: PLAYER_STUN_3
+    21300008: PLAYER_STUN_4
+    21300010: PLAYER_STUN_5
+    21300012: PLAYER_STUN_6
+    21300014: PLAYER_STUN_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -55,81 +55,81 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1798
+        y: 1750
         width: 352
         height: 250
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: PLAYER_STUN_6
+    - name: PLAYER_STUN_1
       rect:
         serializedVersion: 2
         x: 0
-        y: 1542
+        y: 1500
         width: 352
-        height: 253
+        height: 250
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: PLAYER_STUN_7
+    - name: PLAYER_STUN_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 1276
+        y: 1250
         width: 352
-        height: 249
+        height: 250
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: PLAYER_STUN_9
+    - name: PLAYER_STUN_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 1019
+        y: 1000
         width: 352
-        height: 248
+        height: 250
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: PLAYER_STUN_11
+    - name: PLAYER_STUN_4
       rect:
         serializedVersion: 2
         x: 0
         y: 750
         width: 352
-        height: 252
+        height: 250
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: PLAYER_STUN_12
+    - name: PLAYER_STUN_5
       rect:
         serializedVersion: 2
         x: 0
-        y: 495
+        y: 500
         width: 352
-        height: 238
+        height: 250
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: PLAYER_STUN_33
+    - name: PLAYER_STUN_6
       rect:
         serializedVersion: 2
         x: 0
-        y: 255
+        y: 250
         width: 352
-        height: 230
+        height: 250
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: PLAYER_STUN_34
+    - name: PLAYER_STUN_7
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 352
-        height: 254
+        height: 250
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

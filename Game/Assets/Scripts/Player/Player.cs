@@ -9,7 +9,8 @@ public class Player : MonoBehaviour {
 
 
     // HANDLING PLAYER CONTROL
-    private PlayerController playerControl;
+    [HideInInspector]
+    public PlayerController playerControl;
     public GameObject[] ActiveControlGameObj;
 
     // ENERGY LEVEL HANDLING
