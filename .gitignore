@@ -6,6 +6,7 @@ Game/Temp
 *.csproj
 *.db
 *.db.meta
+*.unityproj
 Game/Web
 Game/obj
 Game/Assembly-UnityScript-Editor-vs.unityproj
