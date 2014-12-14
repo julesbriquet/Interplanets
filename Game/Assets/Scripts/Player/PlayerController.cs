@@ -67,6 +67,14 @@ public class PlayerController : CachedBase {
                 {
                     InputPlayerString = "P2_";
                 }
+                if (playerNumber == 3)
+                {
+                    InputPlayerString = "P3_";
+                }
+                if (playerNumber == 4)
+                {
+                    InputPlayerString = "P4_";
+                }
 
                 float inputX = Input.GetAxis(InputPlayerString + "Horizontal");
                 float inputY = Input.GetAxis(InputPlayerString + "Vertical");
