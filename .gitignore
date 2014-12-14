@@ -8,3 +8,4 @@ Game/Temp
 *.db.meta
 Game/Web
 Game/obj
+Game/Assembly-UnityScript-Editor-vs.unityproj
