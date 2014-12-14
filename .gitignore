@@ -6,5 +6,6 @@ Game/Temp
 *.csproj
 *.db
 *.db.meta
+*.unityproj
 Game/Web
 Game/obj
