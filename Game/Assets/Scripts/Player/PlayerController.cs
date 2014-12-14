@@ -163,6 +163,6 @@ public class PlayerController : CachedBase {
         // MOVE
         transform.rotation = Quaternion.identity;
         //.RotateAround(Vector3.zero, 20 * Time.deltaTime);
-        velocity = new Vector2(100f, 0f);
+        velocity = new Vector2(10000f * Time.deltaTime, 0f);
     }
 }
