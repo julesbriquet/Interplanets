@@ -115,7 +115,7 @@ public class PlayerController : CachedBase {
     {
 
         // HANDLING MOVEMENTS
-        if (controlLevel < 3)
+        if (controlLevel < 3 || !enableControl)
             rigidbody2D.AddForce(velocity);
         else
             rigidbody2D.velocity = velocity;
@@ -164,5 +164,6 @@ public class PlayerController : CachedBase {
         transform.rotation = Quaternion.identity;
         //.RotateAround(Vector3.zero, 20 * Time.deltaTime);
         velocity = new Vector2(10000f * Time.deltaTime, 0f);
+        Debug.Log(velocity);
     }
 }

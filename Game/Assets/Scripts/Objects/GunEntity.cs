@@ -84,7 +84,7 @@ public class GunEntity : MonoBehaviour {
                 //Debug.Log("LEVEL 1");
                 shootLifeTime = 1;
                 shootSpeed = 0.5f;
-                roundPerMinute = 15;
+                roundPerMinute = 25;
                 secondsBetweenShoots = 60 / roundPerMinute;
             }
             if (levelWeapon == 2)
@@ -93,7 +93,7 @@ public class GunEntity : MonoBehaviour {
                 shootLifeTime = 2;
                 shootSpeed = 0.6f;
                 stunDelay = 1.5f;
-                roundPerMinute = 30;
+                roundPerMinute = 45;
                 secondsBetweenShoots = 60 / roundPerMinute;
             }
             if (levelWeapon == 3)
@@ -102,7 +102,7 @@ public class GunEntity : MonoBehaviour {
                 shootLifeTime = 3;
                 shootSpeed = 0.7f;
                 stunDelay = 2f;
-                roundPerMinute = 45;
+                roundPerMinute = 65;
                 secondsBetweenShoots = 60 / roundPerMinute;
                 typeOfGun = GunType.Auto;
             }

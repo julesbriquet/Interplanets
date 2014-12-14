@@ -1,0 +1,42 @@
+Initialize engine version: 4.6.0f3 (30840d631a27)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics 4000 (ID=0x166)
+    Vendor:   Intel
+    VRAM:     32 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\jules_000\Documents\UnityProjects\Interplanets\Game\Build\gj01build_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\jules_000\Documents\UnityProjects\Interplanets\Game\Build\gj01build_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\jules_000\Documents\UnityProjects\Interplanets\Game\Build\gj01build_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\jules_000\Documents\UnityProjects\Interplanets\Game\Build\gj01build_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\jules_000\Documents\UnityProjects\Interplanets\Game\Build\gj01build_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\jules_000\Documents\UnityProjects\Interplanets\Game\Build\gj01build_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\jules_000\Documents\UnityProjects\Interplanets\Game\Build\gj01build_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\jules_000\Documents\UnityProjects\Interplanets\Game\Build\gj01build_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.301 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: C:\Users\jules_000\Documents\UnityProjects\Interplanets\Game\Build\gj01build_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\jules_000\Documents\UnityProjects\Interplanets\Game\Build\gj01build_Data\Managed\System.dll (this message is harmless)
+UnloadTime: 20.266623 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 930.
+Total: 2.704980 ms (FindLiveObjects: 0.100990 ms CreateObjectMapping: 0.045568 ms MarkObjects: 0.724585 ms  DeleteObjects: 0.155590 ms)
+
+Player 1 win!!
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Player 2 win!!
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+UnloadTime: 7.543894 ms
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 698 unused Assets to reduce memory usage. Loaded Objects now: 420.
+Total: 4.038791 ms (FindLiveObjects: 0.186791 ms CreateObjectMapping: 0.082105 ms MarkObjects: 0.541488 ms  DeleteObjects: 1.581360 ms)
+

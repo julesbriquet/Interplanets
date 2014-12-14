@@ -27,6 +27,9 @@ public class Player : MonoBehaviour {
     // ARMOR HANDLING
     [HideInInspector]
     public int armorLevel;
+    [HideInInspector]
+    public float armorResistance;
+
     private int maxArmorLevel = 3;
     public GameObject[] ActiveArmorGameObj;
 
@@ -46,6 +49,7 @@ public class Player : MonoBehaviour {
 
         // Armor
         armorLevel = 1;
+        armorResistance = 1;
 
         timeUntilNextDamage = Time.time;
 	}
@@ -99,6 +103,14 @@ public class Player : MonoBehaviour {
                 ActiveArmorGameObj[armorLevel - 1].SetActive(true);
 
             armorLevel += 1;
+            if (armorLevel == 2)
+            {
+                armorResistance = 1.5f;
+            }
+            if (armorLevel == 3)
+            {
+                armorResistance = 2f;
+            }
 
             // UI Modif
             playerUI.SetShield(100 / (maxArmorLevel - 1) * (armorLevel - 1));
@@ -109,7 +121,7 @@ public class Player : MonoBehaviour {
     {
         if (timeUntilNextDamage < Time.time)
         {
-            energyLevel -= damage / armorLevel;
+            energyLevel -= damage / armorResistance;
             if (energyLevel < 0) energyLevel = 0;
             timeUntilNextDamage = delayDamage + Time.time;
         }
