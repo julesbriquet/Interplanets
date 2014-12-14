@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class UIMainMenu : MonoBehaviour {
 
@@ -51,11 +52,20 @@ public class UIMainMenu : MonoBehaviour {
 			players[i] = false;
 			playerImages[i].sprite = playerDisable;
 		}
+		//StateManager.players = new int[]();
 		SwitchPage(start, main);
 	}
 
 	public void LaunchGame(){
 		if(playerSelected){
+			List<int> pid = new List<int>();
+			for(int i = 0; i < players.Length; i++){
+				if(players[i] == true){
+					pid.Add(i+1);
+				}
+			}
+
+			StateManager.players = pid.ToArray();
 			Application.LoadLevel("main_scene");
 		}
 	}
