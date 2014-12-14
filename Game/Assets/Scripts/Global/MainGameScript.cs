@@ -69,8 +69,7 @@ public class MainGameScript : MonoBehaviour {
             {
                 winPlayer.Add(playerList[i].GetPlayerNumber());
                 Debug.Log("Player " + playerList[i].GetPlayerNumber() + " win!!");
-                playerList[i].transform.position = new Vector3(-100, -100, 0);
-                playerList[i].gameObject.SetActive(false);
+                playerList[i].playerControl.GoToLightSpeed();
                 playerList.RemoveAt(i);
                 numberOfPlayer--;
             }
@@ -80,6 +79,7 @@ public class MainGameScript : MonoBehaviour {
         {
             // END GAME!
             Debug.Log("End Game!");
+            StateManager.playersRank = winPlayer.ToArray();
         }
 	}
 }

@@ -32,6 +32,12 @@ public class PlayerController : CachedBase {
     // Handle stun
     public float stunTime = 0;
 
+
+    private bool enableControl = true;
+
+    // HANDLE ANIMATIONS
+    private Animator animEntity;
+
     // This put transform and rigidbody in cache
     public override void Awake()
     {
@@ -42,41 +48,65 @@ public class PlayerController : CachedBase {
 	// Use this for initialization
 	void Start () {
         startSpeed = speed;
+
+        animEntity = GetComponent<Animator>();
+        stunTime = -10;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-        if (Time.time > stunTime)
+        if (enableControl)
         {
-            if (playerNumber == 1)
+            if (Time.time > stunTime)
             {
-                InputPlayerString = "P1_";
-            }
-            if (playerNumber == 2)
-            {
-                InputPlayerString = "P2_";
-            }
-
-            float inputX = Input.GetAxis(InputPlayerString + "Horizontal");
-            float inputY = Input.GetAxis(InputPlayerString + "Vertical");
-            //Debug.Log("Vertical: " + inputY + " Hori: " + inputX);
-
-
-            velocity = new Vector2(speed.x * inputX, speed.y * inputY);
-
-            if (weapon)
-            {
-                bool triggerShoot = false;
-
-                triggerShoot = Input.GetButton(InputPlayerString + "Shoot");
-                if (triggerShoot)
+                if (playerNumber == 1)
                 {
-                    weapon.Shoot(playerNumber);
-                    weapon.hasTriggerBeenRelease = false;
+                    InputPlayerString = "P1_";
                 }
-                else
-                    weapon.hasTriggerBeenRelease = true;
+                if (playerNumber == 2)
+                {
+                    InputPlayerString = "P2_";
+                }
+                if (playerNumber == 3)
+                {
+                    InputPlayerString = "P3_";
+                }
+                if (playerNumber == 4)
+                {
+                    InputPlayerString = "P4_";
+                }
+
+                float inputX = Input.GetAxis(InputPlayerString + "Horizontal");
+                float inputY = Input.GetAxis(InputPlayerString + "Vertical");
+                //Debug.Log("Vertical: " + inputY + " Hori: " + inputX);
+
+                if (animEntity)
+                {
+                    animEntity.SetBool("isStun", false);
+                    //Debug.Log("TEST" + Mathf.Abs(inputX + inputY));
+                    animEntity.SetBool("isMoving", (Mathf.Abs(inputX) + Mathf.Abs(inputY) > 0.5f));
+                }
+
+                velocity = new Vector2(speed.x * inputX, speed.y * inputY);
+
+                if (weapon)
+                {
+                    bool triggerShoot = false;
+
+                    triggerShoot = Input.GetButton(InputPlayerString + "Shoot");
+                    if (triggerShoot)
+                    {
+                        weapon.Shoot(playerNumber);
+                        weapon.hasTriggerBeenRelease = false;
+                    }
+                    else
+                        weapon.hasTriggerBeenRelease = true;
+                }
+            }
+            else
+            {
+                if (animEntity)
+                    animEntity.SetBool("isStun", true);
             }
         }
 	}
@@ -103,9 +133,8 @@ public class PlayerController : CachedBase {
             rigidbody2D.MoveRotation(Mathf.Lerp(rot, velocity.y * rotationSpeed, 2f * Time.deltaTime));
 
         //Debug.Log(rigidbody2D.rotation);
-
-        ScreenLimitControl();
-        
+        if (enableControl)
+            ScreenLimitControl();
     }
 
     void ScreenLimitControl()
@@ -124,5 +153,16 @@ public class PlayerController : CachedBase {
             );
     }
 
+    public void GoToLightSpeed()
+    {
 
+        enableControl = false;
+        animEntity.SetBool("isLightSpeed", true);
+
+        rigidbody2D.collider2D.enabled = false;
+        // MOVE
+        transform.rotation = Quaternion.identity;
+        //.RotateAround(Vector3.zero, 20 * Time.deltaTime);
+        velocity = new Vector2(100f, 0f);
+    }
 }
