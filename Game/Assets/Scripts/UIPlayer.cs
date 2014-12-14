@@ -27,29 +27,25 @@ public class UIPlayer : MonoBehaviour {
 		SetWeapon(0f);
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
 	public void SetEnergy(float pourcent){
-		pourcent = pourcent % 100f;
+		pourcent = pourcent % 101f;
 		energyImage.material.SetFloat("_Cutoff", pourcent/100f);
 		energyText.text = pourcent+"%";
 	}
 
 	public void SetEngine(float pourcent){
-		pourcent = pourcent % 100f;
+		pourcent = pourcent % 1001;
 		engineImage.material.SetFloat("_Cutoff", pourcent/100f);
 	}
 
 	public void SetShield(float pourcent){
-		pourcent = pourcent % 100f;
+		pourcent = pourcent % 101f;
 		shieldImage.material.SetFloat("_Cutoff", pourcent/100f);
 	}
 
 	public void SetWeapon(float pourcent){
-		pourcent = pourcent % 100f;
+		pourcent = pourcent % 101f;
 		weaponImage.material.SetFloat("_Cutoff", pourcent/100f);
 	}
 

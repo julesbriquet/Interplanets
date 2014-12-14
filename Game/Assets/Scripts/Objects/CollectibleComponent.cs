@@ -47,6 +47,8 @@ public class CollectibleComponent : CachedBase
                 playerEntity.LevelUpControl();
             else if (this.typeOfCollectible == CollectibleType.ENERGY_BOX)
                 playerEntity.GetEnergy(energyQuantity);
+            else if (this.typeOfCollectible == CollectibleType.ARMOR_BOX)
+                playerEntity.LevelUpArmor();
 
             Destroy(gameObject);
         }

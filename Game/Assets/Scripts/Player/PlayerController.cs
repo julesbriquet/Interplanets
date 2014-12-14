@@ -23,6 +23,8 @@ public class PlayerController : CachedBase {
     // LEVEL CONTROL HANDLING
     [HideInInspector]
     public int controlLevel;
+    [HideInInspector]
+    public int maxControlLevel = 3;
 
     // This put transform and rigidbody in cache
     public override void Awake()
