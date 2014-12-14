@@ -6,7 +6,7 @@ public class SpaceEntity : CachedBase {
     public bool haveRotation = true;
 
     private Vector3 startEulerAngles;
-    public float rotationSpeed;
+    protected float rotationSpeed;
 
 	// Use this for initialization
 	void Start () {

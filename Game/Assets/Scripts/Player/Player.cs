@@ -19,6 +19,10 @@ public class Player : MonoBehaviour {
     // WEAPON HANDLING
     // TODO
 
+    // DAMAGE HANDLING
+    public float delayDamage;
+    private float timeUntilNextDamage;
+
     // ARMOR HANDLING
     public int armorLevel;
     private int maxArmorLevel = 3;
@@ -40,6 +44,8 @@ public class Player : MonoBehaviour {
 
         // Armor
         armorLevel = 1;
+
+        timeUntilNextDamage = Time.time;
 	}
 
     // Update is called once per frame
@@ -99,7 +105,12 @@ public class Player : MonoBehaviour {
 
     public void TakeDamage(int damage)
     {
-        energyLevel -= damage / armorLevel;
+        if (timeUntilNextDamage < Time.time)
+        {
+            energyLevel -= damage / armorLevel;
+            if (energyLevel < 0) energyLevel = 0;
+            timeUntilNextDamage = delayDamage + Time.time;
+        }
     }
 
     
