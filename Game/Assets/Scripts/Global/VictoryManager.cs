@@ -39,12 +39,21 @@ public class VictoryManager : MonoBehaviour {
 		victoryText.text = "Player "+StateManager.playersRank[0];
 		for(int i = 0; i < StateManager.playersRank.Length; i++){
 			GameObject player = players[StateManager.playersRank[i]-1];
-			iTween.MoveTo(player, destinations[i], 2.5f);
+
+			Hashtable hashtable = new Hashtable();
+			hashtable.Add("position", destinations[i]);
+			hashtable.Add("time", 2.5f);
+			hashtable.Add("delay", i*0.5f);
+			iTween.MoveTo(player, hashtable);
 		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	public void Restart(){
+		Application.LoadLevel("menu_scene");
 	}
 }
