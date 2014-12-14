@@ -20,11 +20,17 @@ public class PlayerController : CachedBase {
     private String InputPlayerString;
     private Vector2 startSpeed;
 
+    [HideInInspector]
+    public GunEntity weapon;
+
     // LEVEL CONTROL HANDLING
     [HideInInspector]
     public int controlLevel;
     [HideInInspector]
     public int maxControlLevel = 3;
+
+    // Handle stun
+    public float stunTime = 0;
 
     // This put transform and rigidbody in cache
     public override void Awake()
@@ -41,21 +47,38 @@ public class PlayerController : CachedBase {
 	// Update is called once per frame
 	void Update () {
 
-        if (playerNumber == 1)
+        if (Time.time > stunTime)
         {
-            InputPlayerString = "P1_";
+            if (playerNumber == 1)
+            {
+                InputPlayerString = "P1_";
+            }
+            if (playerNumber == 2)
+            {
+                InputPlayerString = "P2_";
+            }
+
+            float inputX = Input.GetAxis(InputPlayerString + "Horizontal");
+            float inputY = Input.GetAxis(InputPlayerString + "Vertical");
+            //Debug.Log("Vertical: " + inputY + " Hori: " + inputX);
+
+
+            velocity = new Vector2(speed.x * inputX, speed.y * inputY);
+
+            if (weapon)
+            {
+                bool triggerShoot = false;
+
+                triggerShoot = Input.GetButton(InputPlayerString + "Shoot");
+                if (triggerShoot)
+                {
+                    weapon.Shoot(playerNumber);
+                    weapon.hasTriggerBeenRelease = false;
+                }
+                else
+                    weapon.hasTriggerBeenRelease = true;
+            }
         }
-        if (playerNumber == 2)
-        {
-            InputPlayerString = "P2_";
-        }
-
-        float inputX = Input.GetAxis(InputPlayerString + "Horizontal");
-        float inputY = Input.GetAxis(InputPlayerString + "Vertical");
-        //Debug.Log("Vertical: " + inputY + " Hori: " + inputX);
-
-
-        velocity = new Vector2(speed.x * inputX, speed.y * inputY);
 	}
 
     void FixedUpdate()

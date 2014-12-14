@@ -17,13 +17,14 @@ public class Player : MonoBehaviour {
     public float energyToLightSpeed = 100;
 
     // WEAPON HANDLING
-    // TODO
+    public GameObject ActiveWeaponGameObj;
 
     // DAMAGE HANDLING
     public float delayDamage;
     private float timeUntilNextDamage;
 
     // ARMOR HANDLING
+    [HideInInspector]
     public int armorLevel;
     private int maxArmorLevel = 3;
     public GameObject[] ActiveArmorGameObj;
@@ -113,6 +114,23 @@ public class Player : MonoBehaviour {
         }
     }
 
+    public void LevelUpWeapon()
+    {
+        // Activate weapon
+        if (!playerControl.weapon)
+        {
+            ActiveWeaponGameObj.SetActive(true);
+            playerControl.weapon = GetComponentInChildren<GunEntity>();
+
+            playerControl.weapon.WeaponLevelUp();
+        }
+        else
+            playerControl.weapon.WeaponLevelUp();
+
+        // UI Modif
+        playerUI.SetWeapon(100 / (playerControl.weapon.maxLevel) * (playerControl.weapon.levelWeapon ));
+    }
+
     
 
     public void GetEnergy(int energy)
@@ -123,5 +141,10 @@ public class Player : MonoBehaviour {
     public int GetPlayerNumber()
     {
         return this.playerControl.playerNumber;
+    }
+
+    public void GetStun(float secondsInStun)
+    {
+        playerControl.stunTime = Time.time + secondsInStun;
     }
 }

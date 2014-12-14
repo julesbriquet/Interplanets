@@ -35,7 +35,7 @@ public class UIPlayer : MonoBehaviour {
 	}
 
 	public void SetEngine(float pourcent){
-		pourcent = pourcent % 1001;
+		pourcent = pourcent % 101;
 		engineImage.material.SetFloat("_Cutoff", pourcent/100f);
 	}
 
@@ -45,6 +45,7 @@ public class UIPlayer : MonoBehaviour {
 	}
 
 	public void SetWeapon(float pourcent){
+        if (pourcent > 97) pourcent = 100;
 		pourcent = pourcent % 101f;
 		weaponImage.material.SetFloat("_Cutoff", pourcent/100f);
 	}
