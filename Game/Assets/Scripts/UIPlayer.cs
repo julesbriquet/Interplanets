@@ -29,7 +29,7 @@ public class UIPlayer : MonoBehaviour {
 	
 
 	public void SetEnergy(float pourcent){
-		pourcent = pourcent % 101f;
+        pourcent = Mathf.Clamp(pourcent, 0, 100);
 		energyImage.material.SetFloat("_Cutoff", pourcent/100f);
 		energyText.text = pourcent+"%";
 	}

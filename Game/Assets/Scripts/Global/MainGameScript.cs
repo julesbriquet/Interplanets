@@ -28,6 +28,7 @@ public class MainGameScript : MonoBehaviour {
             spawnPosition = new Vector3(-7, 2, 0);
             GameObject spawnedObj = (GameObject)Instantiate(playerGameObjList[0], spawnPosition, spawnRotation);
             Player playerSpawned = spawnedObj.GetComponent<Player>();
+            playerSpawned.energyToLightSpeed = energyToWin;
             playerList.Add(playerSpawned);
         }
 
@@ -36,6 +37,7 @@ public class MainGameScript : MonoBehaviour {
             spawnPosition = new Vector3(-7, 0, 0);
             GameObject spawnedObj = (GameObject)Instantiate(playerGameObjList[1], spawnPosition, spawnRotation);
             Player playerSpawned = spawnedObj.GetComponent<Player>();
+            playerSpawned.energyToLightSpeed = energyToWin;
             playerList.Add(playerSpawned);
         }
 
@@ -44,6 +46,7 @@ public class MainGameScript : MonoBehaviour {
             spawnPosition = new Vector3(-7, -2, 0);
             GameObject spawnedObj = (GameObject)Instantiate(playerGameObjList[2], spawnPosition, spawnRotation);
             Player playerSpawned = spawnedObj.GetComponent<Player>();
+            playerSpawned.energyToLightSpeed = energyToWin;
             playerList.Add(playerSpawned);
         }
 
@@ -52,12 +55,13 @@ public class MainGameScript : MonoBehaviour {
             spawnPosition = new Vector3(-7, -4, 0);
             GameObject spawnedObj = (GameObject)Instantiate(playerGameObjList[3], spawnPosition, spawnRotation);
             Player playerSpawned = spawnedObj.GetComponent<Player>();
+            playerSpawned.energyToLightSpeed = energyToWin;
             playerList.Add(playerSpawned);
         }
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
         for (int i = 0; i < numberOfPlayer; ++i)
         {
@@ -68,6 +72,7 @@ public class MainGameScript : MonoBehaviour {
                 playerList[i].transform.position = new Vector3(-100, -100, 0);
                 playerList[i].gameObject.SetActive(false);
                 playerList.RemoveAt(i);
+                numberOfPlayer--;
             }
         }
 

@@ -14,7 +14,7 @@ public class Player : MonoBehaviour {
 
     // ENERGY LEVEL HANDLING
     public float energyLevel;
-    private float energyRatio;
+    public float energyToLightSpeed = 100;
 
     // WEAPON HANDLING
     // TODO
@@ -47,6 +47,8 @@ public class Player : MonoBehaviour {
     {
         energyLevel += Time.deltaTime;
 
+        // Energy UI Change
+        playerUI.SetEnergy((int)(100 / energyToLightSpeed * energyLevel));
     }
 
     public void LevelUpControl()
